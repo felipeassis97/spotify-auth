@@ -11,6 +11,10 @@
 		9E9ECD752B70F78600F12B98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9ECD742B70F78600F12B98 /* ContentView.swift */; };
 		9E9ECD772B70F78800F12B98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E9ECD762B70F78800F12B98 /* Assets.xcassets */; };
 		9E9ECD7A2B70F78800F12B98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E9ECD792B70F78800F12B98 /* Preview Assets.xcassets */; };
+		9E9ECD852B70FB5E00F12B98 /* Avenir-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E9ECD822B70FB5E00F12B98 /* Avenir-Demi.ttf */; };
+		9E9ECD862B70FB5E00F12B98 /* Avenir-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E9ECD832B70FB5E00F12B98 /* Avenir-Bold.ttf */; };
+		9E9ECD872B70FB5E00F12B98 /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E9ECD842B70FB5E00F12B98 /* Avenir-Medium.ttf */; };
+		9E9ECD8A2B70FBD700F12B98 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9ECD892B70FBD700F12B98 /* Font+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		9E9ECD742B70F78600F12B98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E9ECD762B70F78800F12B98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E9ECD792B70F78800F12B98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E9ECD802B70FAF500F12B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9E9ECD822B70FB5E00F12B98 /* Avenir-Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Demi.ttf"; sourceTree = "<group>"; };
+		9E9ECD832B70FB5E00F12B98 /* Avenir-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Bold.ttf"; sourceTree = "<group>"; };
+		9E9ECD842B70FB5E00F12B98 /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
+		9E9ECD892B70FBD700F12B98 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,9 @@
 		9E9ECD712B70F78600F12B98 /* SpotifyAuth */ = {
 			isa = PBXGroup;
 			children = (
+				9E9ECD882B70FB8B00F12B98 /* Extensions */,
+				9E9ECD812B70FB4C00F12B98 /* Fonts */,
+				9E9ECD802B70FAF500F12B98 /* Info.plist */,
 				9E9ECD722B70F78600F12B98 /* SpotifyAuthApp.swift */,
 				9E9ECD742B70F78600F12B98 /* ContentView.swift */,
 				9E9ECD762B70F78800F12B98 /* Assets.xcassets */,
@@ -65,6 +77,24 @@
 				9E9ECD792B70F78800F12B98 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E9ECD812B70FB4C00F12B98 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9E9ECD832B70FB5E00F12B98 /* Avenir-Bold.ttf */,
+				9E9ECD822B70FB5E00F12B98 /* Avenir-Demi.ttf */,
+				9E9ECD842B70FB5E00F12B98 /* Avenir-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9E9ECD882B70FB8B00F12B98 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E9ECD892B70FBD700F12B98 /* Font+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +155,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9ECD852B70FB5E00F12B98 /* Avenir-Demi.ttf in Resources */,
 				9E9ECD7A2B70F78800F12B98 /* Preview Assets.xcassets in Resources */,
+				9E9ECD862B70FB5E00F12B98 /* Avenir-Bold.ttf in Resources */,
 				9E9ECD772B70F78800F12B98 /* Assets.xcassets in Resources */,
+				9E9ECD872B70FB5E00F12B98 /* Avenir-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9ECD8A2B70FBD700F12B98 /* Font+.swift in Sources */,
 				9E9ECD752B70F78600F12B98 /* ContentView.swift in Sources */,
 				9E9ECD732B70F78600F12B98 /* SpotifyAuthApp.swift in Sources */,
 			);
@@ -275,6 +309,7 @@
 				DEVELOPMENT_TEAM = FUQ4LQKC8Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpotifyAuth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +339,7 @@
 				DEVELOPMENT_TEAM = FUQ4LQKC8Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpotifyAuth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
