@@ -10,10 +10,12 @@
 	</array>
 	<key>UILaunchScreen</key>
 	<dict>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
 		<key>UIColorName</key>
-		<string>PrimaryGreen</string>
+		<string>Splash</string>
 		<key>UIImageName</key>
-		<string>SpotifyLogo</string>
+		<string>SpotifyBrand</string>
 	</dict>
 </dict>
 </plist>

@@ -1,0 +1,20 @@
+//
+//  PrimaryButtonStyle.swift
+//  SpotifyAuth
+//
+//  Created by Felipe Assis on 08/02/24.
+//
+
+import SwiftUI
+
+struct PrimaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.customStyle(style: .bold, size: 16))
+            .padding()
+            .background(.primaryGreen)
+            .foregroundColor(.black)
+            .clipShape(RoundedRectangle(cornerRadius: 50))
+            .opacity(configuration.isPressed ? 0.5 : 1)
+    }
+}
