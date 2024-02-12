@@ -13,9 +13,12 @@ struct SpotifyAuthApp: App {
     init() {
         FirebaseApp.configure()
     }
+    var authViewModel = AuthViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(authViewModel)
         }
     }
 }

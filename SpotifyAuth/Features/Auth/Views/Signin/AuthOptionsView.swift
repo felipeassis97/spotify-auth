@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AuthOptionsView: View {
+    @Environment(AuthViewModel.self) var authViewModel
+
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
@@ -34,7 +36,7 @@ struct AuthOptionsView: View {
                         .font(.customStyle(style: .bold, size: 28))
                         .padding(.bottom, 16)
  
-                    NavigationLink(destination: SignupView()) {
+                    NavigationLink(destination: SignupEmailView()) {
                         Text("Sign up free")
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                             .buttonStyle(PrimaryButtonStyle())

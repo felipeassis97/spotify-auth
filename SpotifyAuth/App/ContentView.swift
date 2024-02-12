@@ -9,9 +9,15 @@ import SwiftUI
 import FirebaseAuth
 
 struct ContentView: View {
+    @Environment(AuthViewModel.self) var authViewModel
+    
     var body: some View {
-        NavigationStack {
-            AuthOptionsView()
+        Group {
+            if authViewModel.userSession != nil {
+                HomeView()
+            } else {
+                AuthOptionsView()
+            }
         }
     }
 }

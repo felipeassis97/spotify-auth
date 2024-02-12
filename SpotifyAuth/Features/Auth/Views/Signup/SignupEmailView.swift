@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignupView: View {
+struct SignupEmailView: View {
     @Environment(\.dismiss) var dismiss
     @State private var email = ""
     
@@ -25,7 +25,7 @@ struct SignupView: View {
                     .padding(.vertical, 24)
                 HStack {
                     Spacer()
-                    NavigationLink(destination: SignupPasswordView()) {
+                    NavigationLink(destination: SignupPasswordView(email: $email)) {
                         Text("Next")
                             .padding(.horizontal, 16)
                             .buttonStyle(PrimaryButtonStyle())
@@ -54,5 +54,5 @@ struct SignupView: View {
 }
 
 #Preview {
-    SignupView()
+    SignupEmailView()
 }

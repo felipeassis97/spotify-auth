@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SigninView: View {
-    @Environment(\.dismiss) var dismiss
     @State private var email = ""
+    @State private var password = ""
+    @Environment(\.dismiss) var dismiss
+    @Environment(AuthViewModel.self) var authViewModel
     
     init() {
         customNavBarAppearance()
@@ -22,24 +24,25 @@ struct SigninView: View {
                             keyboardType: .emailAddress)
             .padding(.bottom, 8)
             
-            
-            CustomTextField(text: $email,
+            CustomTextField(text: $password,
                             title: "Password",
                             isSecureField: true)
             .padding(.bottom, 24)
-
-            
+    
             HStack {
                Spacer()
-                NavigationLink(destination: SignupGenderView()) {
+                Button(action: {
+                    Task {
+                        try await authViewModel.signin(withEmail: email, password: password)
+                    }
+                }, label: {
                     Text("Log in")
                         .padding(.horizontal, 16)
-                        .buttonStyle(PrimaryButtonStyle())
-                }
+                })
                 .buttonStyle(PrimaryButtonStyle())
                 Spacer()
             }
-            Spacer()
+           Spacer()
         }
         .padding(.all, 24)
         .navigationTitle("Log in")

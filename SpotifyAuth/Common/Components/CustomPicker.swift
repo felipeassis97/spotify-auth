@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DropDownPicker: View {
     
-    @Binding var selection: String?
+    @Binding var selection: String
     var state: DropDownPickerState = .bottom
     let options: [String]
     var maxWidth: CGFloat = 350
@@ -37,7 +37,7 @@ struct DropDownPicker: View {
                     }
                     
                     HStack {
-                        Text(selection == nil ? "" : selection!)
+                        Text(selection.isEmpty ? "" : selection)
                             .font(.customStyle(style: .demi, size: 16))
                             .foregroundStyle(.onBackground)
                         

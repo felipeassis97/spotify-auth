@@ -9,19 +9,20 @@ import SwiftUI
 
 struct SignupGenderView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var email = ""
-    @State var selection1: String? = nil
+    @State var gender: String = ""
+    @Binding var email: String
+    @Binding var password: String
 
-    
-    init() {
-        customNavBarAppearance()
-    }
+//    
+//    init() {
+//        customNavBarAppearance()
+//    }
     
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
                 DropDownPicker(
-                    selection: $selection1,
+                    selection: $gender,
                     options: ["Female", "Male"],
                     title: "What's your gender?"
                 )
@@ -30,7 +31,7 @@ struct SignupGenderView: View {
                 
                 HStack {
                    Spacer()
-                    NavigationLink(destination: SignupNameView()) {
+                    NavigationLink(destination: SignupNameView(email: $email, password: $password, gender: $gender)) {
                         Text("Next")
                             .padding(.horizontal, 16)
                             .buttonStyle(PrimaryButtonStyle())
@@ -61,5 +62,5 @@ struct SignupGenderView: View {
 }
 
 #Preview {
-    SignupGenderView()
+    SignupGenderView(email: .constant("felipeassis97@gmail.com"), password: .constant("123"))
 }

@@ -9,23 +9,24 @@ import SwiftUI
 
 struct SignupPasswordView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var email = ""
+    @State private var password = ""
+    @Binding var email: String
     
-    init() {
-        customNavBarAppearance()
-    }
+//    init() {
+//        customNavBarAppearance()
+//    }
     
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                CustomTextField(text: $email,
+                CustomTextField(text: $password,
                                 title: "Create a password",
                                 isSecureField: true)
                     .padding(.horizontal, 24)
                     .padding(.vertical, 24)
                 HStack {
                    Spacer()
-                    NavigationLink(destination: SignupGenderView()) {
+                    NavigationLink(destination: SignupGenderView(email: $email, password: $password)) {
                         Text("Next")
                             .padding(.horizontal, 16)
                             .buttonStyle(PrimaryButtonStyle())
@@ -54,5 +55,5 @@ struct SignupPasswordView: View {
 }
 
 #Preview {
-    SignupPasswordView()
+    SignupPasswordView(email: .constant("felipeassis97@gmail.com"))
 }
