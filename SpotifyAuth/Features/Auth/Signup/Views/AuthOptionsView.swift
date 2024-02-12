@@ -83,6 +83,13 @@ struct AuthOptionsView: View {
                         .padding(.horizontal, 16)
                     })
                     .buttonStyle(OutlineButtonStyle())
+                    
+                    NavigationLink("Log in") {
+                        SigninView()
+                    }
+                    .font(.customStyle(style: .bold, size: 16))
+                    .foregroundStyle(.onBackground)
+                    .padding(.top, 8)
                 }
                 .padding(.all, 24)
             }

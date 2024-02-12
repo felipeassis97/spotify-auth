@@ -11,6 +11,7 @@
 		9E1439042B76333D00F26E84 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1439032B76333D00F26E84 /* CustomPicker.swift */; };
 		9E1439062B7640F700F26E84 /* SignupNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1439052B7640F700F26E84 /* SignupNameView.swift */; };
 		9E25C2202B73A2B5003BE3AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E25C21F2B73A2B5003BE3AA /* GoogleService-Info.plist */; };
+		9E30396C2B7A505E005BB2E3 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E30396B2B7A505E005BB2E3 /* SigninView.swift */; };
 		9E5A45B02B739B7300232C46 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A45AF2B739B7300232C46 /* Font+.swift */; };
 		9E5A45B52B739BA100232C46 /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E5A45B22B739BA100232C46 /* Avenir-Medium.ttf */; };
 		9E5A45B62B739BA100232C46 /* Avenir-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E5A45B32B739BA100232C46 /* Avenir-Demi.ttf */; };
@@ -37,6 +38,7 @@
 		9E1439052B7640F700F26E84 /* SignupNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupNameView.swift; sourceTree = "<group>"; };
 		9E25C21E2B73A130003BE3AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9E25C21F2B73A2B5003BE3AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9E30396B2B7A505E005BB2E3 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		9E5A45AF2B739B7300232C46 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		9E5A45B22B739BA100232C46 /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
 		9E5A45B32B739BA100232C46 /* Avenir-Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Demi.ttf"; sourceTree = "<group>"; };
@@ -102,6 +104,31 @@
 				9E81DD1B2B73983500C6A49C /* ContentView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		9E3039682B7A5028005BB2E3 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				9E98078F2B755F4400BA4747 /* ViewModels */,
+				9E98078E2B755F2E00BA4747 /* Views */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		9E3039692B7A5041005BB2E3 /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				9E30396A2B7A5046005BB2E3 /* Views */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		9E30396A2B7A5046005BB2E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E30396B2B7A505E005BB2E3 /* SigninView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9E5A45AE2B739B5900232C46 /* Extensions */ = {
@@ -193,8 +220,8 @@
 		9E98078C2B755EF900BA4747 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				9E98078F2B755F4400BA4747 /* ViewModels */,
-				9E98078E2B755F2E00BA4747 /* Views */,
+				9E3039692B7A5041005BB2E3 /* Signin */,
+				9E3039682B7A5028005BB2E3 /* Signup */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -356,6 +383,7 @@
 				9E81DD1A2B73983500C6A49C /* SpotifyAuthApp.swift in Sources */,
 				9E1439022B7631A900F26E84 /* SignupGenderView.swift in Sources */,
 				9E98078A2B755E5400BA4747 /* OutlineButtonStyle.swift in Sources */,
+				9E30396C2B7A505E005BB2E3 /* SigninView.swift in Sources */,
 				9E9807982B7571A200BA4747 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
