@@ -30,6 +30,7 @@
 		9E9807962B75696800BA4747 /* CustomNavBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807952B75696800BA4747 /* CustomNavBarAppearance.swift */; };
 		9E9807982B7571A200BA4747 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807972B7571A200BA4747 /* CustomTextField.swift */; };
 		9E98079A2B757ABB00BA4747 /* SignupPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807992B757ABB00BA4747 /* SignupPasswordView.swift */; };
+		9EF212532B7C077700D1A9C5 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF212522B7C077700D1A9C5 /* LibraryView.swift */; };
 		F3BE8E62C7219BB0430CE924 /* Pods_SpotifyAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C294EC531A1A0981F79C0FE /* Pods_SpotifyAuth.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		9E9807952B75696800BA4747 /* CustomNavBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarAppearance.swift; sourceTree = "<group>"; };
 		9E9807972B7571A200BA4747 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		9E9807992B757ABB00BA4747 /* SignupPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPasswordView.swift; sourceTree = "<group>"; };
+		9EF212522B7C077700D1A9C5 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		FBE6357CE8DE6C64CD9FE187 /* Pods-SpotifyAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyAuth.release.xcconfig"; path = "Target Support Files/Pods-SpotifyAuth/Pods-SpotifyAuth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +256,7 @@
 		9E98078B2B755EB900BA4747 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				9EF212512B7C076A00D1A9C5 /* Library */,
 				9E3039742B7A673F005BB2E3 /* Home */,
 				9E98078C2B755EF900BA4747 /* Auth */,
 			);
@@ -276,6 +279,14 @@
 				9E9807952B75696800BA4747 /* CustomNavBarAppearance.swift */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		9EF212512B7C076A00D1A9C5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				9EF212522B7C077700D1A9C5 /* LibraryView.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +411,7 @@
 				9E98079A2B757ABB00BA4747 /* SignupPasswordView.swift in Sources */,
 				9E1439042B76333D00F26E84 /* CustomPicker.swift in Sources */,
 				9E9807882B755E1C00BA4747 /* PrimaryButtonStyle.swift in Sources */,
+				9EF212532B7C077700D1A9C5 /* LibraryView.swift in Sources */,
 				9E3039712B7A55D3005BB2E3 /* User.swift in Sources */,
 				9E3039772B7A6751005BB2E3 /* HomeView.swift in Sources */,
 				9E9807912B755F6900BA4747 /* AuthOptionsView.swift in Sources */,

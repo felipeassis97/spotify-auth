@@ -10,10 +10,12 @@ import FirebaseCore
 
 @main
 struct SpotifyAuthApp: App {
+    let authViewModel: AuthViewModel
+
     init() {
         FirebaseApp.configure()
+        authViewModel = AuthViewModel()
     }
-    var authViewModel = AuthViewModel()
 
     var body: some Scene {
         WindowGroup {

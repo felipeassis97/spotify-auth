@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if authViewModel.userSession != nil {
-                HomeView()
+                BottomNavigation()
             } else {
                 AuthOptionsView()
             }
@@ -22,6 +22,46 @@ struct ContentView: View {
     }
 }
 
+struct BottomNavigation: View {
+    @State var selectedTab = 0
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            NavigationStack {
+                HomeView()
+            }
+            .tabItem {
+                Label {
+                    Text("Home")
+                        .font(.customStyle(style: .medium, size: 14))
+                        .foregroundStyle(.onBackground)
+                } icon: {
+                    Image(.homeIcon)
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
+            .tag(0)
+            
+            NavigationStack {
+                LibraryView()
+            }
+            .tabItem {
+                Label {
+                    Text("Library")
+                        .font(.customStyle(style: .medium, size: 14))
+                        .foregroundStyle(.onBackground)
+                } icon: {
+                    Image(.libraryIcon)
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
+            .tag(1)
+        }
+    }
+}
+
 #Preview {
-    ContentView()
+    BottomNavigation()
 }

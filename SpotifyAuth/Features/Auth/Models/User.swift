@@ -5,12 +5,14 @@
 //  Created by Felipe Assis on 12/02/24.
 //
 
-import Foundation
+import SwiftUI
 
 struct User: Codable, Identifiable {
     let id: String
     let fullName: String
     let email: String
+    let profileImagePath: String?
+    var profileImage: Data?
     
     var initials:  String {
         let formatter = PersonNameComponentsFormatter()
@@ -23,5 +25,5 @@ struct User: Codable, Identifiable {
 }
 
 extension User {
-    static var MOCK_USER = User(id: NSUUID().uuidString, fullName: "Felipe Assis", email: "felipeassis97@gmail.com")
+    static var MOCK_USER = User(id: NSUUID().uuidString, fullName: "Felipe Assis", email: "felipeassis97@gmail.com", profileImagePath: nil, profileImage: nil)
 }

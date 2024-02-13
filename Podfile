@@ -8,5 +8,8 @@ target 'SpotifyAuth' do
   # Pods for SpotifyAuth
   pod 'FirebaseCore', '10.21.0'
   pod 'FirebaseAuth', '10.21.0'
+  pod 'FirebaseFirestore', '10.21.0'
+  pod 'FirebaseFirestoreSwift'
+  pod 'FirebaseStorage', '10.21.0'
 
 end

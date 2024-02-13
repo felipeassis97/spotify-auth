@@ -40,6 +40,8 @@ struct SigninView: View {
                         .padding(.horizontal, 16)
                 })
                 .buttonStyle(PrimaryButtonStyle())
+                .disabled(!isValid)
+                .opacity(isValid ? 1.0 : 0.5)
                 Spacer()
             }
            Spacer()
@@ -61,6 +63,15 @@ struct SigninView: View {
         }
     }
     
+}
+
+extension SigninView: ValidateForm {
+    var isValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+    }
 }
 
 #Preview {

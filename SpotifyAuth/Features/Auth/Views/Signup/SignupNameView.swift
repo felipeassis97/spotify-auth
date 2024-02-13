@@ -23,6 +23,11 @@ struct SignupNameView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
+                
+                
+                
+                
+                
                 CustomTextField(text: $name,
                                 title: "What's your name?")
                     .padding(.horizontal, 24)
