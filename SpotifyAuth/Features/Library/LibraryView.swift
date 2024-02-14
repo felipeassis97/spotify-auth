@@ -6,31 +6,77 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct LibraryView: View {
+    @Environment(AuthViewModel.self) var authViewModel
+    @State private var selectedPhoto: PhotosPickerItem?
+    
     var body: some View {
-        @Environment(AuthViewModel.self) var authViewModel
-        
         VStack {
-            if authViewModel.currentUser?.profileImage != nil {
-                if let im = UIImage(data: authViewModel.currentUser!.profileImage!)  {
-                    Image(uiImage: im)
-                        .resizable()
-                        .scaledToFit()
-                }
-            } else {
-                Circle()
-                    .foregroundStyle(.gray)
-                    .scaledToFit()
-                    .frame(width: 50)
-            }
-            
+            ProfileImageView()
+            Spacer()
             Text(authViewModel.currentUser?.fullName ?? "")
                 .font(.customStyle(style: .bold, size: 16))
+        }
+        
+    }
+}
+
+
+
+struct ProfileImageView: View {
+    @Environment(AuthViewModel.self) var authViewModel
+    @State private var selectedPhoto: PhotosPickerItem?
+    
+    var body: some View {
+        VStack {
             
+            ZStack {
+                if authViewModel.currentUser?.profileImage != nil {
+                    if let profile = UIImage(data: authViewModel.currentUser!.profileImage!)  {
+                        Image(uiImage: profile)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: 100)
+                            .clipShape(Circle())
+                            .padding(.bottom, 16)
+                    }
+                } else {
+                    Circle()
+                        .foregroundStyle(.gray)
+                        .scaledToFit()
+                        .frame(width: 100)
+                        .padding(.bottom, 16)
+                }
+                
+                PhotosPicker(selection: $selectedPhoto, matching: .images) {
+                    Image(systemName: "pencil")
+                }
+                .onChange(of: selectedPhoto)  {
+                    if selectedPhoto != nil {
+                        Task {
+                            authViewModel.currentUser?.profileImage = try await selectedPhoto?.loadTransferable(type: Data.self)
+                        }
+                    }
+                }
+            }
+            
+            if selectedPhoto != nil {
+                Button {
+                    Task {
+                        await authViewModel.saveToStorage(pickerImage: selectedPhoto!)
+                        selectedPhoto = nil
+                    }
+                } label: {
+                    Text("Save changes")
+                }
+                .buttonStyle(PrimaryButtonStyle())
+            }
         }
     }
 }
+
 #Preview {
     LibraryView()
 }
