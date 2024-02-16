@@ -23,6 +23,8 @@
 		9E81DD1C2B73983500C6A49C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E81DD1B2B73983500C6A49C /* ContentView.swift */; };
 		9E81DD1E2B73983600C6A49C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E81DD1D2B73983600C6A49C /* Assets.xcassets */; };
 		9E81DD212B73983600C6A49C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E81DD202B73983600C6A49C /* Preview Assets.xcassets */; };
+		9E8B8DA82B7F743000A67B19 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B8DA72B7F743000A67B19 /* EditProfileView.swift */; };
+		9E8B8DAC2B7F74A400A67B19 /* UserPhotoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B8DAB2B7F74A400A67B19 /* UserPhotoComponentView.swift */; };
 		9E9807882B755E1C00BA4747 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807872B755E1C00BA4747 /* PrimaryButtonStyle.swift */; };
 		9E98078A2B755E5400BA4747 /* OutlineButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807892B755E5400BA4747 /* OutlineButtonStyle.swift */; };
 		9E9807912B755F6900BA4747 /* AuthOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807902B755F6900BA4747 /* AuthOptionsView.swift */; };
@@ -55,6 +57,8 @@
 		9E81DD1B2B73983500C6A49C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E81DD1D2B73983600C6A49C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E81DD202B73983600C6A49C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E8B8DA72B7F743000A67B19 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		9E8B8DAB2B7F74A400A67B19 /* UserPhotoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoComponentView.swift; sourceTree = "<group>"; };
 		9E9807872B755E1C00BA4747 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		9E9807892B755E5400BA4747 /* OutlineButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineButtonStyle.swift; sourceTree = "<group>"; };
 		9E9807902B755F6900BA4747 /* AuthOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionsView.swift; sourceTree = "<group>"; };
@@ -233,13 +237,39 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9E8B8DA92B7F745200A67B19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E8B8DAA2B7F745C00A67B19 /* Components */,
+				9EF212522B7C077700D1A9C5 /* LibraryView.swift */,
+				9E8B8DA72B7F743000A67B19 /* EditProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E8B8DAA2B7F745C00A67B19 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E8B8DAB2B7F74A400A67B19 /* UserPhotoComponentView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9E8B8DAD2B7F75C000A67B19 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				9E9807972B7571A200BA4747 /* CustomTextField.swift */,
+				9E1439032B76333D00F26E84 /* CustomPicker.swift */,
+			);
+			name = Fields;
+			sourceTree = "<group>";
+		};
 		9E9807852B755D4C00BA4747 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9E8B8DAD2B7F75C000A67B19 /* Fields */,
 				9E9807942B75694200BA4747 /* NavigationBar */,
 				9E9807862B755DED00BA4747 /* Buttons */,
-				9E9807972B7571A200BA4747 /* CustomTextField.swift */,
-				9E1439032B76333D00F26E84 /* CustomPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -284,7 +314,7 @@
 		9EF212512B7C076A00D1A9C5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				9EF212522B7C077700D1A9C5 /* LibraryView.swift */,
+				9E8B8DA92B7F745200A67B19 /* Views */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -413,6 +443,7 @@
 				9E9807882B755E1C00BA4747 /* PrimaryButtonStyle.swift in Sources */,
 				9EF212532B7C077700D1A9C5 /* LibraryView.swift in Sources */,
 				9E3039712B7A55D3005BB2E3 /* User.swift in Sources */,
+				9E8B8DAC2B7F74A400A67B19 /* UserPhotoComponentView.swift in Sources */,
 				9E3039772B7A6751005BB2E3 /* HomeView.swift in Sources */,
 				9E9807912B755F6900BA4747 /* AuthOptionsView.swift in Sources */,
 				9E5A45B02B739B7300232C46 /* Font+.swift in Sources */,
@@ -420,6 +451,7 @@
 				9E9807962B75696800BA4747 /* CustomNavBarAppearance.swift in Sources */,
 				9E81DD1C2B73983500C6A49C /* ContentView.swift in Sources */,
 				9E1439062B7640F700F26E84 /* SignupNameView.swift in Sources */,
+				9E8B8DA82B7F743000A67B19 /* EditProfileView.swift in Sources */,
 				9E81DD1A2B73983500C6A49C /* SpotifyAuthApp.swift in Sources */,
 				9E1439022B7631A900F26E84 /* SignupGenderView.swift in Sources */,
 				9E98078A2B755E5400BA4747 /* OutlineButtonStyle.swift in Sources */,
