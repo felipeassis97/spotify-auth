@@ -28,7 +28,7 @@ struct LibraryView: View {
             Spacer()
         }
         .sheet(isPresented: $showEditSheet, content: {
-            EditProfileView()
+            EditProfileView(email: authViewModel.currentUser?.email ?? "", name: authViewModel.currentUser?.fullName ?? "")
         })
     }
 }

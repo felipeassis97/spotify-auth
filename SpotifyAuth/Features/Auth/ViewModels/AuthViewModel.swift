@@ -114,12 +114,23 @@ protocol ValidateForm {
             let ref = storageRef.child(self.currentUser!.profileImagePath!)
             
             ref.getData(maxSize: 1 * 2024 * 2048) { data, error in
-              if let error = error {
-                  print("ERROR: Failed to get profile image \(error.localizedDescription)")
-              } else {
-                  self.currentUser?.profileImage = data
-              }
+                if let error = error {
+                    print("ERROR: Failed to get profile image \(error.localizedDescription)")
+                } else {
+                    self.currentUser?.profileImage = data
+                }
             }
+        }
+    }
+    
+    func editProfileInfo(name: String) async {
+        do {
+            let userCollection = Firestore.firestore().collection("users").document(userSession?.uid ?? "")
+            try await userCollection.updateData(["fullName": name])
+            await fetchUserData()
+        } catch {
+            print("ERROR: Failed edit profile Info \(error.localizedDescription)")
+            
         }
     }
 }

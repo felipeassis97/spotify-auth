@@ -9,8 +9,9 @@ import SwiftUI
 
 struct EditProfileView: View {
     @Environment(AuthViewModel.self) var authViewModel
-    @State private var email: String = ""
-    @State private var name: String = ""
+    @Environment(\.dismiss) var dismiss
+    @State var email: String
+    @State var name: String
 
     var body: some View {
         VStack(spacing: 16) {
@@ -22,7 +23,10 @@ struct EditProfileView: View {
                             keyboardType: .emailAddress)
             Spacer()
             Button {
-               print("")
+                Task {
+                    await authViewModel.editProfileInfo(name: name)
+                }
+                dismiss()
             } label: {
                 Text("Confirm changes")
             }
@@ -33,5 +37,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView()
+    EditProfileView(email: "ddf", name: "sds")
 }

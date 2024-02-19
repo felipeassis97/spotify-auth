@@ -32,6 +32,9 @@
 		9E9807962B75696800BA4747 /* CustomNavBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807952B75696800BA4747 /* CustomNavBarAppearance.swift */; };
 		9E9807982B7571A200BA4747 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807972B7571A200BA4747 /* CustomTextField.swift */; };
 		9E98079A2B757ABB00BA4747 /* SignupPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9807992B757ABB00BA4747 /* SignupPasswordView.swift */; };
+		9EA66B3E2B836EAD00F4940A /* IDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B3D2B836EAD00F4940A /* IDatabase.swift */; };
+		9EA66B402B836F8E00F4940A /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B3F2B836F8E00F4940A /* DatabaseError.swift */; };
+		9EA66B422B836FAE00F4940A /* FirestoreDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B412B836FAE00F4940A /* FirestoreDatabase.swift */; };
 		9EF212532B7C077700D1A9C5 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF212522B7C077700D1A9C5 /* LibraryView.swift */; };
 		F3BE8E62C7219BB0430CE924 /* Pods_SpotifyAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C294EC531A1A0981F79C0FE /* Pods_SpotifyAuth.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		9E9807952B75696800BA4747 /* CustomNavBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarAppearance.swift; sourceTree = "<group>"; };
 		9E9807972B7571A200BA4747 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		9E9807992B757ABB00BA4747 /* SignupPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPasswordView.swift; sourceTree = "<group>"; };
+		9EA66B3D2B836EAD00F4940A /* IDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDatabase.swift; sourceTree = "<group>"; };
+		9EA66B3F2B836F8E00F4940A /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
+		9EA66B412B836FAE00F4940A /* FirestoreDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabase.swift; sourceTree = "<group>"; };
 		9EF212522B7C077700D1A9C5 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		FBE6357CE8DE6C64CD9FE187 /* Pods-SpotifyAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyAuth.release.xcconfig"; path = "Target Support Files/Pods-SpotifyAuth/Pods-SpotifyAuth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +108,7 @@
 		9E25C2212B73A313003BE3AA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9EA66B3B2B836E8600F4940A /* Services */,
 				9E9807852B755D4C00BA4747 /* Components */,
 				9E5A45B12B739B8200232C46 /* Fonts */,
 				9E5A45AE2B739B5900232C46 /* Extensions */,
@@ -311,6 +318,24 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
+		9EA66B3B2B836E8600F4940A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9EA66B3C2B836E9600F4940A /* Database */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9EA66B3C2B836E9600F4940A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				9EA66B3D2B836EAD00F4940A /* IDatabase.swift */,
+				9EA66B3F2B836F8E00F4940A /* DatabaseError.swift */,
+				9EA66B412B836FAE00F4940A /* FirestoreDatabase.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		9EF212512B7C076A00D1A9C5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,12 +463,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E9807932B755FCA00BA4747 /* SignupEmailView.swift in Sources */,
+				9EA66B3E2B836EAD00F4940A /* IDatabase.swift in Sources */,
 				9E98079A2B757ABB00BA4747 /* SignupPasswordView.swift in Sources */,
+				9EA66B402B836F8E00F4940A /* DatabaseError.swift in Sources */,
 				9E1439042B76333D00F26E84 /* CustomPicker.swift in Sources */,
 				9E9807882B755E1C00BA4747 /* PrimaryButtonStyle.swift in Sources */,
 				9EF212532B7C077700D1A9C5 /* LibraryView.swift in Sources */,
 				9E3039712B7A55D3005BB2E3 /* User.swift in Sources */,
 				9E8B8DAC2B7F74A400A67B19 /* UserPhotoComponentView.swift in Sources */,
+				9EA66B422B836FAE00F4940A /* FirestoreDatabase.swift in Sources */,
 				9E3039772B7A6751005BB2E3 /* HomeView.swift in Sources */,
 				9E9807912B755F6900BA4747 /* AuthOptionsView.swift in Sources */,
 				9E5A45B02B739B7300232C46 /* Font+.swift in Sources */,
