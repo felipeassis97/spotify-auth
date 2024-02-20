@@ -51,6 +51,8 @@ protocol ValidateForm {
             await fetchUserData()
         } catch {
             print("ERROR: Failed to create user with error \(error.localizedDescription)")
+            print("ERROR:error \(error.self)")
+
         }
     }
     

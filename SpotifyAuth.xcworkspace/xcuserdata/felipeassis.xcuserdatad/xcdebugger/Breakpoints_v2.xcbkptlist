@@ -52,5 +52,113 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "createUser(withEmail:password:fullName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - 661e6252057568d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1825">
+               </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - 836b159443220fae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "425">
+               </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - cbce85ea83adaea9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - 661e6252057568d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1856">
+               </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - 836b159443220fae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "447">
+               </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - cbce85ea83adaea9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "554">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

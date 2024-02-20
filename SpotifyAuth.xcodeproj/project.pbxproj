@@ -35,6 +35,9 @@
 		9EA66B3E2B836EAD00F4940A /* IDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B3D2B836EAD00F4940A /* IDatabase.swift */; };
 		9EA66B402B836F8E00F4940A /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B3F2B836F8E00F4940A /* DatabaseError.swift */; };
 		9EA66B422B836FAE00F4940A /* FirestoreDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B412B836FAE00F4940A /* FirestoreDatabase.swift */; };
+		9ED9D5FE2B84ABA00023FB1F /* IAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9D5FD2B84ABA00023FB1F /* IAuthentication.swift */; };
+		9ED9D6002B84AC050023FB1F /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9D5FF2B84AC050023FB1F /* AuthenticationError.swift */; };
+		9ED9D6022B84ACC50023FB1F /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9D6012B84ACC50023FB1F /* FirebaseAuthentication.swift */; };
 		9EF212532B7C077700D1A9C5 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF212522B7C077700D1A9C5 /* LibraryView.swift */; };
 		F3BE8E62C7219BB0430CE924 /* Pods_SpotifyAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C294EC531A1A0981F79C0FE /* Pods_SpotifyAuth.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,9 @@
 		9EA66B3D2B836EAD00F4940A /* IDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDatabase.swift; sourceTree = "<group>"; };
 		9EA66B3F2B836F8E00F4940A /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
 		9EA66B412B836FAE00F4940A /* FirestoreDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabase.swift; sourceTree = "<group>"; };
+		9ED9D5FD2B84ABA00023FB1F /* IAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuthentication.swift; sourceTree = "<group>"; };
+		9ED9D5FF2B84AC050023FB1F /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		9ED9D6012B84ACC50023FB1F /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 		9EF212522B7C077700D1A9C5 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		FBE6357CE8DE6C64CD9FE187 /* Pods-SpotifyAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyAuth.release.xcconfig"; path = "Target Support Files/Pods-SpotifyAuth/Pods-SpotifyAuth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -321,6 +327,7 @@
 		9EA66B3B2B836E8600F4940A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9ED9D5FC2B84AB800023FB1F /* Authentication */,
 				9EA66B3C2B836E9600F4940A /* Database */,
 			);
 			path = Services;
@@ -334,6 +341,16 @@
 				9EA66B412B836FAE00F4940A /* FirestoreDatabase.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		9ED9D5FC2B84AB800023FB1F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9ED9D5FD2B84ABA00023FB1F /* IAuthentication.swift */,
+				9ED9D5FF2B84AC050023FB1F /* AuthenticationError.swift */,
+				9ED9D6012B84ACC50023FB1F /* FirebaseAuthentication.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		9EF212512B7C076A00D1A9C5 /* Library */ = {
@@ -479,11 +496,14 @@
 				9E9807962B75696800BA4747 /* CustomNavBarAppearance.swift in Sources */,
 				9E81DD1C2B73983500C6A49C /* ContentView.swift in Sources */,
 				9E1439062B7640F700F26E84 /* SignupNameView.swift in Sources */,
+				9ED9D5FE2B84ABA00023FB1F /* IAuthentication.swift in Sources */,
 				9E8B8DA82B7F743000A67B19 /* EditProfileView.swift in Sources */,
+				9ED9D6022B84ACC50023FB1F /* FirebaseAuthentication.swift in Sources */,
 				9E81DD1A2B73983500C6A49C /* SpotifyAuthApp.swift in Sources */,
 				9E1439022B7631A900F26E84 /* SignupGenderView.swift in Sources */,
 				9E98078A2B755E5400BA4747 /* OutlineButtonStyle.swift in Sources */,
 				9E30396C2B7A505E005BB2E3 /* SigninView.swift in Sources */,
+				9ED9D6002B84AC050023FB1F /* AuthenticationError.swift in Sources */,
 				9E9807982B7571A200BA4747 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
