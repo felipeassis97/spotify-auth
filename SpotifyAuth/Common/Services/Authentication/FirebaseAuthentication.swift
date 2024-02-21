@@ -41,6 +41,23 @@ struct FirebaseAuthentication: IAuthentication {
             return .failure(.handleFirebaseError(error: error))
         }
     }
+    
+    func signout() throws -> Result<Bool, AuthenticationError> {
+        do {
+            try auth.signOut()
+            return .success(true)
+        }
+        catch {
+            return .failure(.handleFirebaseError(error: error))
+        }
+    }
+    
+    func getUserID() throws -> Result<String, AuthenticationError> {
+        guard let uid = auth.currentUser?.uid else {
+            return .failure(.userNotFound)
+        }
+        return .success(uid)
+    }
 }
 
 

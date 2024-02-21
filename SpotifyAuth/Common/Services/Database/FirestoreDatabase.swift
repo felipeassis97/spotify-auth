@@ -11,31 +11,30 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct FirestoreDatabase: IDatabase {
-
     let firestore = Firestore.firestore()
     let fisrestoreEncoder = Firestore.Encoder()
     let storage = Storage.storage()
     
-    func getByID<T>(collectionID: String, documentID: String) async throws -> Result<T?, DatabaseError> where T : Decodable {
+    func getByID<T>(collectionID: String, documentID: String, collection: T.Type) async throws -> Result<T, DatabaseError> where T : Decodable {
         guard let snapshot = try? await firestore.collection(collectionID).document(documentID).getDocument() else {
             return .failure(.collectionNotFound)
         }
-        
-        guard let decodedResponse = try? snapshot.data(as: T.self) else {
+        guard let decodedResponse = try? snapshot.data(as: collection.self) else {
             return .failure(.decodeError)
         }
         return .success(decodedResponse)
     }
     
-    
     func setData<T>(collectionID: String, documentID: String, collection: T) async throws -> Result<Bool, DatabaseError> where T : Encodable {
-        guard let encodedData = try? fisrestoreEncoder.encode(collection) else {
+        do {
+            let encodedData = try fisrestoreEncoder.encode(collection)
+            guard let _ = try? await firestore.collection(collectionID).document(documentID).setData(encodedData) else {
+                return .failure(.collectionNotFound)
+            }
+            return .success(true)
+        } catch {
             return .failure(.encodeError)
         }
-        guard let _ = try? await firestore.collection(collectionID).document(documentID).setData(encodedData) else {
-            return .failure(.collectionNotFound)
-        }
-        return .success(true)
     }
     
     func editData(collectionID: String, documentID: String, data: [String : Any]) async throws -> Result<Bool, DatabaseError> {

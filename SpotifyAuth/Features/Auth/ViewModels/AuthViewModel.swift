@@ -19,6 +19,9 @@ protocol ValidateForm {
 
 
 @Observable class AuthViewModel {
+    let authService: IAuthentication = FirebaseAuthentication()
+    let databaseService: IDatabase = FirestoreDatabase()
+    
     var userSession: FirebaseAuth.User?
     var currentUser: User?
     let storage = Storage.storage()
@@ -52,7 +55,7 @@ protocol ValidateForm {
         } catch {
             print("ERROR: Failed to create user with error \(error.localizedDescription)")
             print("ERROR:error \(error.self)")
-
+            
         }
     }
     
@@ -76,11 +79,40 @@ protocol ValidateForm {
         }
     }
     
-    func fetchUserData() async {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
-        self.currentUser = try? snapshot.data(as: User.self)
-        await retrieveProfileImage(uid: uid)
+    func fetchUserID() throws -> String {
+        let uid = try authService.getUserID()
+        switch uid {
+        case .success(let uid):
+            return uid
+        case .failure(let error):
+            return error.localizedDescription
+        }
+    }
+    
+    func fetchUser(userID: String) async throws -> User {
+        let user = try await databaseService.getByID(collectionID: "users", documentID: userID, collection: User.self)
+        switch user {
+        case .success(let response):
+            return response
+        case .failure(let error):
+            return error.localizedDescription
+        }
+
+    }
+    
+    func fetchUserData() async throws {
+        do {
+            let uid = try fetchUserID()
+            let user = try await databaseService.getByID(collectionID: "users", documentID: uid, collection: User.self)
+            
+        }
+        
+        
+        
+        //        guard let uid = Auth.auth().currentUser?.uid else { return }
+        //        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
+        //        self.currentUser = try? snapshot.data(as: User.self)
+        //        await retrieveProfileImage(uid: uid)
     }
     
     func saveToStorage(pickerImage: PhotosPickerItem) async {
