@@ -29,7 +29,7 @@ protocol ValidateForm {
     init() {
         self.userSession = Auth.auth().currentUser
         Task {
-            await fetchUserData()
+            try await fetchUserData()
         }
     }
     
@@ -37,7 +37,7 @@ protocol ValidateForm {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
-            await fetchUserData()
+            try  await fetchUserData()
         } catch{
             print("ERROR: Failed to signin user with error \(error.localizedDescription)")
             
@@ -51,7 +51,7 @@ protocol ValidateForm {
             let user = User(id: result.user.uid, fullName: fullName, email: email, profileImagePath: nil, profileImage: nil)
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
-            await fetchUserData()
+            try await fetchUserData()
         } catch {
             print("ERROR: Failed to create user with error \(error.localizedDescription)")
             print("ERROR:error \(error.self)")
@@ -79,92 +79,132 @@ protocol ValidateForm {
         }
     }
     
-    func fetchUserID() throws -> String {
-        let uid = try authService.getUserID()
-        switch uid {
-        case .success(let uid):
-            return uid
-        case .failure(let error):
-            return error.localizedDescription
-        }
-    }
-    
-    func fetchUser(userID: String) async throws -> User {
-        let user = try await databaseService.getByID(collectionID: "users", documentID: userID, collection: User.self)
-        switch user {
-        case .success(let response):
-            return response
-        case .failure(let error):
-            return error.localizedDescription
-        }
-
-    }
-    
-    func fetchUserData() async throws {
-        do {
-            let uid = try fetchUserID()
-            let user = try await databaseService.getByID(collectionID: "users", documentID: uid, collection: User.self)
-            
-        }
-        
-        
-        
-        //        guard let uid = Auth.auth().currentUser?.uid else { return }
-        //        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
-        //        self.currentUser = try? snapshot.data(as: User.self)
-        //        await retrieveProfileImage(uid: uid)
-    }
-    
-    func saveToStorage(pickerImage: PhotosPickerItem) async {
-        do {
-            if let imageData = try await pickerImage.loadTransferable(type: Data.self) {
-                let uiImage = UIImage(data: imageData)
-                let imageCompressed = uiImage?.jpegData(compressionQuality: 0.7)
-                guard imageCompressed != nil else {
-                    return
-                }
-                guard let uid = Auth.auth().currentUser?.uid else { return }
-                let storageRef = storage.reference()
-                let path = "profileImages/\(uid).jpg"
-                let fileRef = storageRef.child(path)
-                fileRef.putData(imageCompressed!, metadata: nil) { metadata, error in
-                    if error == nil && metadata != nil {
-                        Firestore.firestore().collection("users")
-                            .document(uid)
-                            .updateData(["profileImagePath": path])
-                    }
-                }
-            }
-            await fetchUserData()
-        }
-        catch {
-            print("ERROR: Failed to save user image with error \(error.localizedDescription)")
-        }
-    }
-    
-    func retrieveProfileImage(uid: String) async {
-        if self.currentUser?.profileImagePath != nil {
-            let storageRef = storage.reference()
-            let ref = storageRef.child(self.currentUser!.profileImagePath!)
-            
-            ref.getData(maxSize: 1 * 2024 * 2048) { data, error in
-                if let error = error {
-                    print("ERROR: Failed to get profile image \(error.localizedDescription)")
-                } else {
-                    self.currentUser?.profileImage = data
-                }
-            }
-        }
-    }
-    
     func editProfileInfo(name: String) async {
         do {
             let userCollection = Firestore.firestore().collection("users").document(userSession?.uid ?? "")
             try await userCollection.updateData(["fullName": name])
-            await fetchUserData()
+            try await fetchUserData()
         } catch {
             print("ERROR: Failed edit profile Info \(error.localizedDescription)")
             
         }
     }
+    
+    //MARK: Refactored functions
+    func fetchUserData() async throws {
+        do {
+            guard let uid = try fetchUserID() else {
+                return
+            }
+            guard let user = try await fetchUser(userID: uid) else {
+                return
+            }
+            self.currentUser = user
+            if self.currentUser?.profileImagePath != nil {
+                await retrieveProfileImage(uid: uid, imagePath: self.currentUser?.profileImagePath ?? "")
+            }
+        }
+    }
+    
+    func saveImageToStorage(pickerImage: PhotosPickerItem) async throws {
+        guard let uid = try fetchUserID() else {
+            return
+        }
+        if let imageData = try await pickerImage.loadTransferable(type: Data.self) {
+            let saved = try await databaseService.setImageData(collectionID: "users", documentID: uid, imageData: imageData)
+            switch saved {
+            case .success(_):
+                try await fetchUserData()
+            case.failure(let error):
+                print("ERROR: saveImageToStorage \(error.localizedDescription)")
+                return
+            }
+        }
+    }
+    
+    //MARK: Private functions
+    private func fetchUserID() throws -> String? {
+        let uid = try authService.getUserID()
+        switch uid {
+        case .success(let uid):
+            return uid
+        case .failure(let error):
+            print("ERROR: fetchUserID \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    private func fetchUser(userID: String) async throws -> User? {
+        let user = try await databaseService.getByID(collectionID: "users", documentID: userID, collection: User.self)
+        switch user {
+        case .success(let response):
+            return response
+        case .failure(let error):
+            print("ERROR: fetchUser \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    private func retrieveProfileImage(uid: String, imagePath: String) async {
+        let storageRef = storage.reference()
+        let ref = storageRef.child(imagePath)
+        ref.getData(maxSize: 1 * 2024 * 2048) { data, error in
+            if let error = error {
+                print("ERROR: Failed to get profile image \(error.localizedDescription)")
+            } else {
+                self.currentUser?.profileImage = data
+            }
+        }
+    }
+    
+    //    private func retrieve(documentID: String, String: String) async throws -> Data? {
+    //        return try await databaseService.retrieveImageData(documentID: documentID, path: String)
+    //        var imageData: Data?
+    //        let storageRef = storage.reference()
+    //        let ref = storageRef.child(path)
+    //        ref.getData(maxSize: 1 * 2024 * 2048) { data, error in
+    //            if let _ = error {
+    //            } else {
+    //                print("Success: retrieve")
+    //                imageData = data
+    //            }
+    //        }
+    ////        if errorResponse != nil {
+    ////            return .failure(errorResponse!)
+    ////        }
+    ////
+    ////        if imageData != nil {
+    ////            return .success(imageData!)
+    ////        }
+    ////        return .failure(.retrieveImage)
+    //        return imageData
+    //    }
+    
+    
+    //    func saveToStorage(pickerImage: PhotosPickerItem) async {
+    //        do {
+    //            if let imageData = try await pickerImage.loadTransferable(type: Data.self) {
+    //                let uiImage = UIImage(data: imageData)
+    //                let imageCompressed = uiImage?.jpegData(compressionQuality: 0.7)
+    //                guard imageCompressed != nil else {
+    //                    return
+    //                }
+    //                guard let uid = Auth.auth().currentUser?.uid else { return }
+    //                let storageRef = storage.reference()
+    //                let path = "profileImages/\(uid).jpg"
+    //                let fileRef = storageRef.child(path)
+    //                fileRef.putData(imageCompressed!, metadata: nil) { metadata, error in
+    //                    if error == nil && metadata != nil {
+    //                        Firestore.firestore().collection("users")
+    //                            .document(uid)
+    //                            .updateData(["profileImagePath": path])
+    //                    }
+    //                }
+    //            }
+    //            try await fetchUserData()
+    //        }
+    //        catch {
+    //            print("ERROR: Failed to save user image with error \(error.localizedDescription)")
+    //        }
+    //    }
 }

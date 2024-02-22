@@ -51,7 +51,7 @@ struct FirestoreDatabase: IDatabase {
             return .failure(.compressedImage)
         }
         let storageRef = storage.reference()
-        let path = "Images/\(documentID).jpg"
+        let path = "profileImages/\(documentID).jpg"
         let fileRef = storageRef.child(path)
         fileRef.putData(compress, metadata: nil) { metadata, error in
             if error == nil && metadata != nil {
@@ -63,26 +63,30 @@ struct FirestoreDatabase: IDatabase {
         return .success(true)
     }
     
-    func retrieveImageData(documentID: String, path: String) async throws -> Result<Data, DatabaseError> {
+    func retrieveImageData(documentID: String, path: String) async throws -> Data? {
         var imageData: Data?
         var errorResponse: DatabaseError?
         let storageRef = storage.reference()
         let ref = storageRef.child(path)
+
         ref.getData(maxSize: 1 * 2024 * 2048) { data, error in
-            if let error = error {
+            if let _ = error {
+                print("Error: retrieve")
                 errorResponse = DatabaseError.retrieveImage
             } else {
+                print("Success: retrieve")
                 imageData = data
             }
         }
-        if errorResponse != nil {
-            return .failure(errorResponse!)
-        }
-        
-        if imageData != nil {
-            return .success(imageData!)
-        }
-        return .failure(.retrieveImage)
+//        if errorResponse != nil {
+//            return .failure(errorResponse!)
+//        }
+//        
+//        if imageData != nil {
+//            return .success(imageData!)
+//        }
+//        return .failure(.retrieveImage)
+        return imageData
     }
 }
 

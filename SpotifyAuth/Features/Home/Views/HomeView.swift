@@ -30,7 +30,7 @@ struct HomeView: View {
                 if selectedPhoto != nil {
                     Button {
                         Task {
-                            await authViewModel.saveToStorage(pickerImage: selectedPhoto!)
+                           try await authViewModel.saveImageToStorage(pickerImage: selectedPhoto!)
                         }
                     } label: {
                         Text("Upload")

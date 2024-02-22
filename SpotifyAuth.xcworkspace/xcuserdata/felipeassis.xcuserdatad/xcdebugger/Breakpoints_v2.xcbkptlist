@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E12A6553-7D78-4164-8B2C-C128741A0309"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpotifyAuth/App/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BD63221B-EA07-4E03-9EF3-75E9C4C1F252"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -157,23 +141,211 @@
                   endingLineNumber = "53"
                   offsetFromSymbolStart = "554">
                </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - 661e62520575687c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1856">
+               </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - 836b159443220f01"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "447">
+               </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - cbce85ea83adae06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "554">
+               </Location>
+               <Location
+                  uuid = "D6B6DBC9-720E-4C39-8B68-EEC3D1252924 - 9de6d1aecdaae046"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for SpotifyAuth.AuthViewModel.createUser(withEmail: Swift.String, password: Swift.String, fullName: Swift.String) async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "451">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "06BDE02E-7E41-4E4D-8150-55B8373BBA96"
+            uuid = "9B93C342-DC8E-4F3D-9C2B-A2874A4F25C1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "fetchUserData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9B93C342-DC8E-4F3D-9C2B-A2874A4F25C1 - fe62ba468e4eb48d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SpotifyAuth.AuthViewModel.fetchUserData() async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "9B93C342-DC8E-4F3D-9C2B-A2874A4F25C1 - fe62ba468e4eb48d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SpotifyAuth.AuthViewModel.fetchUserData() async throws -&gt; ()"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "403">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A401186-B940-47CB-B4B3-679A8FA8A887"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpotifyAuth/Common/Services/Database/FirestoreDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "retrieveImageData(documentID:path:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9A401186-B940-47CB-B4B3-679A8FA8A887 - 5765ef617febebe0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for SpotifyAuth.FirestoreDatabase.retrieveImageData(documentID: Swift.String, path: Swift.String) async throws -&gt; Swift.Result&lt;Foundation.Data, SpotifyAuth.DatabaseError&gt;"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Common/Services/Database/FirestoreDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "978">
+               </Location>
+               <Location
+                  uuid = "9A401186-B940-47CB-B4B3-679A8FA8A887 - b45dd1fc0220ac6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for SpotifyAuth.FirestoreDatabase.retrieveImageData(documentID: Swift.String, path: Swift.String) async throws -&gt; Swift.Optional&lt;Foundation.Data&gt;"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Common/Services/Database/FirestoreDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "658">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E0BF57D-5D27-473C-926A-6A6EFCE89BCB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpotifyAuth/Common/Services/Database/FirestoreDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "fetchUserID()"
+            landmarkName = "retrieveImageData(documentID:path:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7E0BF57D-5D27-473C-926A-6A6EFCE89BCB - 5765ef617febea9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for SpotifyAuth.FirestoreDatabase.retrieveImageData(documentID: Swift.String, path: Swift.String) async throws -&gt; Swift.Result&lt;Foundation.Data, SpotifyAuth.DatabaseError&gt;"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Common/Services/Database/FirestoreDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "1667">
+               </Location>
+               <Location
+                  uuid = "7E0BF57D-5D27-473C-926A-6A6EFCE89BCB - b45dd1fc0220ac6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for SpotifyAuth.FirestoreDatabase.retrieveImageData(documentID: Swift.String, path: Swift.String) async throws -&gt; Swift.Optional&lt;Foundation.Data&gt;"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Common/Services/Database/FirestoreDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "658">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
