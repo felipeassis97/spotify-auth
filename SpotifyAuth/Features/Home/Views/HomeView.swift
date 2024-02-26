@@ -55,7 +55,7 @@ struct HomeView: View {
                 
                 Button(action: {
                     Task {
-                        authViewModel.signout()
+                        try await authViewModel.signout()
                     }
                 }, label: {
                     Text("Log out")

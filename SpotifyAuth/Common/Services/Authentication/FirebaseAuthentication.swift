@@ -10,9 +10,11 @@ import FirebaseAuth
 
 
 struct FirebaseAuthentication: IAuthentication {
+ 
+
     let auth = Auth.auth()
     
-    func createUser(withEmail email: String, password: String, fullName: String) async throws -> Result<Bool, AuthenticationError> {
+    func createUser(withEmail email: String, password: String) async throws -> Result<Bool, AuthenticationError> {
         do {
             try await auth.createUser(withEmail: email, password: password)
             return .success(true)
@@ -24,7 +26,7 @@ struct FirebaseAuthentication: IAuthentication {
     
     func signin(withEmail email: String, password: String) async throws -> Result<Bool, AuthenticationError> {
         do {
-            try await auth.createUser(withEmail: email, password: password)
+            try await auth.signIn(withEmail: email, password: password)
             return .success(true)
         }
         catch {
@@ -57,6 +59,19 @@ struct FirebaseAuthentication: IAuthentication {
             return .failure(.userNotFound)
         }
         return .success(uid)
+    }
+    
+    func currentUser() -> User?  {
+        guard let firebaseUser = auth.currentUser else {
+            return nil
+        }
+        
+        let currentUser = User(id: firebaseUser.uid,                               
+                               email: firebaseUser.email ?? "",
+                               profileImagePath: nil,
+                               fullName: firebaseUser.displayName ?? ""
+                               )
+        return currentUser
     }
 }
 

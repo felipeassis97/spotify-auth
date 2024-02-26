@@ -9,21 +9,23 @@ import SwiftUI
 
 struct User: Codable, Identifiable {
     let id: String
-    let fullName: String
     let email: String
-    let profileImagePath: String?
+    var profileImagePath: String?
+    var fullName: String?
     var profileImage: Data?
     
     var initials:  String {
-        let formatter = PersonNameComponentsFormatter()
-        if let components = formatter.personNameComponents(from: fullName) {
-            formatter.style = .abbreviated
-            return formatter.string(from: components)
+        if fullName != nil {
+            let formatter = PersonNameComponentsFormatter()
+            if let components = formatter.personNameComponents(from: fullName ?? "") {
+                formatter.style = .abbreviated
+                return formatter.string(from: components)
+            }
         }
         return ""
     }
 }
 
 extension User {
-    static var MOCK_USER = User(id: NSUUID().uuidString, fullName: "Felipe Assis", email: "felipeassis97@gmail.com", profileImagePath: nil, profileImage: nil)
+    static var MOCK_USER = User(id: NSUUID().uuidString, email: "felipeassis97@gmail.com", profileImagePath: nil, fullName: "Felipe Assis", profileImage: nil)
 }

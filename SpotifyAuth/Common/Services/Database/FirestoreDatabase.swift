@@ -15,7 +15,7 @@ struct FirestoreDatabase: IDatabase {
     let fisrestoreEncoder = Firestore.Encoder()
     let storage = Storage.storage()
     
-    func getByID<T>(collectionID: String, documentID: String, collection: T.Type) async throws -> Result<T, DatabaseError> where T : Decodable {
+    func getByID<T : Decodable>(collectionID: String, documentID: String, collection: T.Type) async throws -> Result<T, DatabaseError> {
         guard let snapshot = try? await firestore.collection(collectionID).document(documentID).getDocument() else {
             return .failure(.collectionNotFound)
         }
@@ -25,7 +25,7 @@ struct FirestoreDatabase: IDatabase {
         return .success(decodedResponse)
     }
     
-    func setData<T>(collectionID: String, documentID: String, collection: T) async throws -> Result<Bool, DatabaseError> where T : Encodable {
+    func setData<T: Encodable>(collectionID: String, documentID: String, collection: T) async throws -> Result<Bool, DatabaseError> {
         do {
             let encodedData = try fisrestoreEncoder.encode(collection)
             guard let _ = try? await firestore.collection(collectionID).document(documentID).setData(encodedData) else {
@@ -78,14 +78,6 @@ struct FirestoreDatabase: IDatabase {
                 imageData = data
             }
         }
-//        if errorResponse != nil {
-//            return .failure(errorResponse!)
-//        }
-//        
-//        if imageData != nil {
-//            return .success(imageData!)
-//        }
-//        return .failure(.retrieveImage)
         return imageData
     }
 }

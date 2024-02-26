@@ -24,7 +24,7 @@ struct EditProfileView: View {
             Spacer()
             Button {
                 Task {
-                    await authViewModel.editProfileInfo(name: name)
+                   try await authViewModel.editProfileInfo(name: name)
                 }
                 dismiss()
             } label: {
