@@ -10,7 +10,6 @@
 		9E1439022B7631A900F26E84 /* SignupGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1439012B7631A900F26E84 /* SignupGenderView.swift */; };
 		9E1439042B76333D00F26E84 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1439032B76333D00F26E84 /* CustomPicker.swift */; };
 		9E1439062B7640F700F26E84 /* SignupNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1439052B7640F700F26E84 /* SignupNameView.swift */; };
-		9E25C2202B73A2B5003BE3AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E25C21F2B73A2B5003BE3AA /* GoogleService-Info.plist */; };
 		9E30396C2B7A505E005BB2E3 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E30396B2B7A505E005BB2E3 /* SigninView.swift */; };
 		9E30396E2B7A54B8005BB2E3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E30396D2B7A54B8005BB2E3 /* AuthViewModel.swift */; };
 		9E3039712B7A55D3005BB2E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3039702B7A55D3005BB2E3 /* User.swift */; };
@@ -35,6 +34,7 @@
 		9EA66B3E2B836EAD00F4940A /* IDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B3D2B836EAD00F4940A /* IDatabase.swift */; };
 		9EA66B402B836F8E00F4940A /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B3F2B836F8E00F4940A /* DatabaseError.swift */; };
 		9EA66B422B836FAE00F4940A /* FirestoreDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA66B412B836FAE00F4940A /* FirestoreDatabase.swift */; };
+		9EB27F992B8E001600CE8BD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EB27F982B8E001500CE8BD6 /* GoogleService-Info.plist */; };
 		9ED9D5FE2B84ABA00023FB1F /* IAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9D5FD2B84ABA00023FB1F /* IAuthentication.swift */; };
 		9ED9D6002B84AC050023FB1F /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9D5FF2B84AC050023FB1F /* AuthenticationError.swift */; };
 		9ED9D6022B84ACC50023FB1F /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9D6012B84ACC50023FB1F /* FirebaseAuthentication.swift */; };
@@ -49,7 +49,6 @@
 		9E1439032B76333D00F26E84 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		9E1439052B7640F700F26E84 /* SignupNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupNameView.swift; sourceTree = "<group>"; };
 		9E25C21E2B73A130003BE3AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9E25C21F2B73A2B5003BE3AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E30396B2B7A505E005BB2E3 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		9E30396D2B7A54B8005BB2E3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		9E3039702B7A55D3005BB2E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		9EA66B3D2B836EAD00F4940A /* IDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDatabase.swift; sourceTree = "<group>"; };
 		9EA66B3F2B836F8E00F4940A /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
 		9EA66B412B836FAE00F4940A /* FirestoreDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabase.swift; sourceTree = "<group>"; };
+		9EB27F982B8E001500CE8BD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9ED9D5FD2B84ABA00023FB1F /* IAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuthentication.swift; sourceTree = "<group>"; };
 		9ED9D5FF2B84AC050023FB1F /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		9ED9D6012B84ACC50023FB1F /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				9E81DD1D2B73983600C6A49C /* Assets.xcassets */,
-				9E25C21F2B73A2B5003BE3AA /* GoogleService-Info.plist */,
+				9EB27F982B8E001500CE8BD6 /* GoogleService-Info.plist */,
 				9E25C21E2B73A130003BE3AA /* Info.plist */,
 				9E25C2222B73A331003BE3AA /* App */,
 				9E25C2212B73A313003BE3AA /* Common */,
@@ -426,7 +426,7 @@
 				9E81DD212B73983600C6A49C /* Preview Assets.xcassets in Resources */,
 				9E81DD1E2B73983600C6A49C /* Assets.xcassets in Resources */,
 				9E5A45B52B739BA100232C46 /* Avenir-Medium.ttf in Resources */,
-				9E25C2202B73A2B5003BE3AA /* GoogleService-Info.plist in Resources */,
+				9EB27F992B8E001600CE8BD6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

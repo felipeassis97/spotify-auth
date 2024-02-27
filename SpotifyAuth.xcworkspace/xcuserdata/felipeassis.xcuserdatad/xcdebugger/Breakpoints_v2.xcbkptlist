@@ -36,5 +36,68 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B74DDB21-A089-43D8-9593-6E3F89C56ABE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "googleSignin()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B74DDB21-A089-43D8-9593-6E3F89C56ABE - 1229db8a1744f8b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(15) suspend resume partial function for SpotifyAuth.AuthViewModel.googleSignin() async -&gt; Swift.Bool"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "750">
+               </Location>
+               <Location
+                  uuid = "B74DDB21-A089-43D8-9593-6E3F89C56ABE - a80d667ef248fd5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(13) suspend resume partial function for SpotifyAuth.AuthViewModel.googleSignin() async -&gt; Swift.Bool"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "2821">
+               </Location>
+               <Location
+                  uuid = "B74DDB21-A089-43D8-9593-6E3F89C56ABE - 1229db8a1744f890"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(15) suspend resume partial function for SpotifyAuth.AuthViewModel.googleSignin() async -&gt; Swift.Bool"
+                  moduleName = "SpotifyAuth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeassis/Projects/personal_projects/SpotifyAuth/SpotifyAuth/Features/Auth/ViewModels/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "494">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

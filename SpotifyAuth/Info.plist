@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.377095490944-28qruq3qtgrjqr1unalbg73f24ujtfop</string>
+			</array>
+		</dict>
+	</array>
+	<key>GIDClientID</key>
+	<string>377095490944-28qruq3qtgrjqr1unalbg73f24ujtfop.apps.googleusercontent.com</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Avenir-Bold.ttf</string>
@@ -10,12 +21,12 @@
 	</array>
 	<key>UILaunchScreen</key>
 	<dict>
-		<key>UIImageRespectsSafeAreaInsets</key>
-		<true/>
 		<key>UIColorName</key>
 		<string>Splash</string>
 		<key>UIImageName</key>
 		<string>SpotifyBrand</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
 	</dict>
 </dict>
 </plist>

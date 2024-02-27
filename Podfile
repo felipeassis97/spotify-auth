@@ -11,5 +11,7 @@ target 'SpotifyAuth' do
   pod 'FirebaseFirestore', '10.21.0'
   pod 'FirebaseFirestoreSwift'
   pod 'FirebaseStorage', '10.21.0'
+  pod 'GoogleSignIn', '7.0.0'
+  pod 'GoogleSignInSwift', '0.3.2'
 
 end

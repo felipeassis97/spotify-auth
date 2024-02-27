@@ -10,6 +10,10 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseStorage
 import PhotosUI
+import FirebaseAuth
+import GoogleSignIn
+import GoogleSignInSwift
+
 
 
 protocol ValidateForm {
@@ -27,6 +31,47 @@ protocol ValidateForm {
         Task {
             try await fetchUserData()
         }
+    }
+    
+    func googleSignin() async -> Bool {
+        
+        let clientID = "377095490944-28qruq3qtgrjqr1unalbg73f24ujtfop.apps.googleusercontent.com"
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        guard let windowScene = await UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = await windowScene.windows.first,
+              let rootViewController = await window.rootViewController else {
+            print("There is not root view controller")
+            return false
+        }
+        
+        do {
+            let userAuthentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
+            let user = userAuthentication.user
+            guard let idToken = user.idToken else {
+                print("ID Token missing")
+                return false
+            }
+            let accessToken = user.accessToken
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
+            let result = try await Auth.auth().signIn(with: credential)
+            
+            let existsUserData = databaseService.checkIfExistsDoc()
+            if !existsUserData {
+                self.currentUser = User(id: result.user.uid, email: result.user.email ?? "", fullName: result.user.displayName)
+                try await setUser()
+            }
+
+            print("Logged with \(result.user.email ?? "NOT FOUND")")
+            return true
+        }
+        catch {
+            print("ERROR: \(error.localizedDescription)")
+            return false
+        }
+
+       
     }
     
     func signin(withEmail email: String, password: String) async throws {

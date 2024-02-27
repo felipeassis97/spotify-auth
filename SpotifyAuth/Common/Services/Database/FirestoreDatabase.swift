@@ -68,7 +68,7 @@ struct FirestoreDatabase: IDatabase {
         var errorResponse: DatabaseError?
         let storageRef = storage.reference()
         let ref = storageRef.child(path)
-
+        
         ref.getData(maxSize: 1 * 2024 * 2048) { data, error in
             if let _ = error {
                 print("Error: retrieve")
@@ -80,5 +80,19 @@ struct FirestoreDatabase: IDatabase {
         }
         return imageData
     }
-}
+    
+    func checkIfExistsDoc() -> Bool {
+        var isExists: Bool = false
 
+        DispatchQueue.main.async {
+            let docRef = firestore.collection("collection").document("doc")
+            docRef.getDocument { (document, error) in
+                if ((document?.exists) != nil) {
+                    isExists = true
+                }
+            }
+            
+        }
+        return isExists
+    }
+}

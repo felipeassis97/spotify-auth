@@ -42,7 +42,9 @@ struct AuthOptionsView: View {
                             .buttonStyle(PrimaryButtonStyle())
                     }                    .buttonStyle(PrimaryButtonStyle())
                     Button(action: {
-                        
+                        Task {
+                            await authViewModel.googleSignin()
+                        }
                     }, label: {
                         HStack {
                             Image(.googleLogo)
