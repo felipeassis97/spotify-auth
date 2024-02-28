@@ -13,7 +13,7 @@ protocol IDatabase {
     func editData(collectionID: String, documentID: String, data: [String: Any]) async throws -> Result<Bool, DatabaseError>
     func setImageData(collectionID: String, documentID: String, imageData: Data) async throws -> Result<Bool, DatabaseError>
     func retrieveImageData(documentID: String, path: String) async throws -> Data?
-    func checkIfExistsDoc() -> Bool
+    func checkIfExistsDoc(collectionID: String, documentID: String) async throws -> Bool
 }
 
 

@@ -33,45 +33,26 @@ protocol ValidateForm {
         }
     }
     
-    func googleSignin() async -> Bool {
-        
-        let clientID = "377095490944-28qruq3qtgrjqr1unalbg73f24ujtfop.apps.googleusercontent.com"
-        let config = GIDConfiguration(clientID: clientID)
-        GIDSignIn.sharedInstance.configuration = config
-        
+    func googleSignin() async throws {
         guard let windowScene = await UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = await windowScene.windows.first,
               let rootViewController = await window.rootViewController else {
             print("There is not root view controller")
-            return false
+            return
         }
-        
-        do {
-            let userAuthentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
-            let user = userAuthentication.user
-            guard let idToken = user.idToken else {
-                print("ID Token missing")
-                return false
-            }
-            let accessToken = user.accessToken
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
-            let result = try await Auth.auth().signIn(with: credential)
-            
-            let existsUserData = databaseService.checkIfExistsDoc()
+        let response = try await authService.authWithGoogle(rootViewController: rootViewController)
+        switch response {
+        case .success(let user):
+            let existsUserData = try await databaseService.checkIfExistsDoc(collectionID: "users", documentID: user.id)
             if !existsUserData {
-                self.currentUser = User(id: result.user.uid, email: result.user.email ?? "", fullName: result.user.displayName)
+                self.currentUser = user
                 try await setUser()
+            } else {
+                try await fetchUserData()
             }
-
-            print("Logged with \(result.user.email ?? "NOT FOUND")")
-            return true
+        case .failure(let error):
+            print("ERROR: Failed to auth with Google \(error)")
         }
-        catch {
-            print("ERROR: \(error.localizedDescription)")
-            return false
-        }
-
-       
     }
     
     func signin(withEmail email: String, password: String) async throws {
@@ -129,7 +110,7 @@ protocol ValidateForm {
             }
         }
     }
-        
+    
     func saveImageToStorage(pickerImage: PhotosPickerItem) async throws {
         guard let uid = try fetchUserID() else {
             return

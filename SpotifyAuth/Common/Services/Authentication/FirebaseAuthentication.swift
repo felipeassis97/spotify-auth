@@ -7,13 +7,13 @@
 
 import Foundation
 import FirebaseAuth
+import GoogleSignIn
+import GoogleSignInSwift
 
 
 struct FirebaseAuthentication: IAuthentication {
- 
-
     let auth = Auth.auth()
-    
+
     func createUser(withEmail email: String, password: String) async throws -> Result<Bool, AuthenticationError> {
         do {
             try await auth.createUser(withEmail: email, password: password)
@@ -31,6 +31,29 @@ struct FirebaseAuthentication: IAuthentication {
         }
         catch {
             return .failure(.handleFirebaseError(error: error))
+        }
+    }
+    
+    func authWithGoogle(rootViewController: UIViewController) async throws -> Result<User, AuthenticationError> {
+        let clientID = "377095490944-28qruq3qtgrjqr1unalbg73f24ujtfop.apps.googleusercontent.com"
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        do {
+            let userAuthentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
+            let user = userAuthentication.user
+            guard let idToken = user.idToken else {
+                print("ID Token missing")
+                return .failure(.invalidUserToken)
+            }
+            let accessToken = user.accessToken
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
+            let result = try await auth.signIn(with: credential)
+            let userResponse =  User(id: result.user.uid, email: result.user.email ?? "", fullName: result.user.displayName)
+            return .success(userResponse)
+        } catch {
+            print("ERROR authWithGoogle: \(error.localizedDescription)")
+            return .failure(.unknownError(error: error.localizedDescription))
         }
     }
     

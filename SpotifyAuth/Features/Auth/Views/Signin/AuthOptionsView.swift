@@ -43,7 +43,7 @@ struct AuthOptionsView: View {
                     }                    .buttonStyle(PrimaryButtonStyle())
                     Button(action: {
                         Task {
-                            await authViewModel.googleSignin()
+                            try await authViewModel.googleSignin()
                         }
                     }, label: {
                         HStack {

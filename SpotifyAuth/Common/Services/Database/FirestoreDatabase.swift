@@ -64,35 +64,32 @@ struct FirestoreDatabase: IDatabase {
     }
     
     func retrieveImageData(documentID: String, path: String) async throws -> Data? {
-        var imageData: Data?
-        var errorResponse: DatabaseError?
+        
         let storageRef = storage.reference()
         let ref = storageRef.child(path)
         
-        ref.getData(maxSize: 1 * 2024 * 2048) { data, error in
-            if let _ = error {
-                print("Error: retrieve")
-                errorResponse = DatabaseError.retrieveImage
-            } else {
-                print("Success: retrieve")
-                imageData = data
-            }
-        }
-        return imageData
+        let result = try await ref.getMetadata()
+        
+        var imageData: Data?
+//        var errorResponse: DatabaseError?
+//        let storageRef = storage.reference()
+//        let ref = storageRef.child(path)
+//        
+//        ref.getData(maxSize: 1 * 2024 * 2048) { data, error in
+//            if let _ = error {
+//                print("Error: retrieve")
+//                errorResponse = DatabaseError.retrieveImage
+//            } else {
+//                print("Success: retrieve")
+//                imageData = data
+//            }
+//        }
+     return imageData
     }
     
-    func checkIfExistsDoc() -> Bool {
-        var isExists: Bool = false
-
-        DispatchQueue.main.async {
-            let docRef = firestore.collection("collection").document("doc")
-            docRef.getDocument { (document, error) in
-                if ((document?.exists) != nil) {
-                    isExists = true
-                }
-            }
-            
-        }
-        return isExists
+    func checkIfExistsDoc(collectionID: String, documentID: String) async throws -> Bool {
+            let docRef = firestore.collection(collectionID).document(documentID)
+            let result = try await docRef.getDocument()
+        return result.exists
     }
 }
