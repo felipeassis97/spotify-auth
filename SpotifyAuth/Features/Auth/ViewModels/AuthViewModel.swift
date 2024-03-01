@@ -33,7 +33,7 @@ protocol ValidateForm {
         }
     }
     
-    func googleSignin() async throws {
+    func googleAuth() async throws {
         guard let windowScene = await UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = await windowScene.windows.first,
               let rootViewController = await window.rootViewController else {
